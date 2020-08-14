@@ -212,20 +212,20 @@ function drawBackground() {
   b.setFont('6x8', 2);
 
   b.drawString('DISTANCE', 120, 20);
-  b.drawString('TIME', 60, 70);
-  b.drawString('PACE', 180, 70);
-  b.drawString('STEPS', 60, 120);
-  b.drawString('STP/m', 180, 120);
-  b.drawString('SPEED', 40, 170);
-  b.drawString('HEART', 120, 170);
-  b.drawString('CADENCE', 200, 170);
+  b.drawString('TIME', 120, 70);
+  //b.drawString('PACE', 180, 70);
+  b.drawString('CALORIES', 120, 120);
+  //b.drawString('STP/m', 180, 120);
+  //b.drawString('SPEED', 40, 170);
+  b.drawString('HEART', 60, 170);
+  b.drawString('CADENCE', 170, 170);
 }
 
 function draw() {
-  const totSpeed = totTime ? 3.6 * totDist / totTime : 0;
+  //const totSpeed = totTime ? 3.6 * totDist / totTime : 0;
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
 
-  b.clearRect(0, 00, 240, 20);
+  b.clearRect(0, 0, 240, 20);
   b.clearRect(0, 40, 240, 70);
   b.clearRect(0, 90, 240, 120);
   b.clearRect(0, 140, 240, 170);
@@ -235,28 +235,28 @@ function draw() {
 
   b.setFontAlign(-1, -1, 0);
   b.setColor(gpsReady ?  COL.GREEN : COL.RED);
-  b.drawString(' GPS', 6, 0);
+  b.drawString(' uReplay Monitor', 20, 0);
 
-  b.setFontAlign(1, -1, 0);
-  b.setColor(COL.WHITE);
-  b.drawString(formatClock(new Date()), 234, 0);
+  //b.setFontAlign(1, -1, 0);
+  //b.setColor(COL.WHITE);
+  //b.drawString(formatClock(new Date()), 234, 0);
 
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
   b.drawString(formatDistance(totDist), 120, 40);
-  b.drawString(formatTime(totTime), 60, 90);
-  b.drawString(formatSpeed(totSpeed), 180, 90);
-  b.drawString(totSteps, 60, 140);
-  b.drawString(totCadence, 180, 140);
+  b.drawString(formatTime(totTime), 120, 90);
+  //b.drawString(formatSpeed(totSpeed), 180, 90);
+  b.drawString(totSteps, 120, 140);
+  b.drawString(totCadence, 120, 140);
 
   b.setFont('6x8', 2);
-  b.drawString(formatSpeed(speed), 40,190);
+  //b.drawString(formatSpeed(speed), 40,190);
 
   b.setColor(hrmReady ? COL.GREEN : COL.RED);
-  b.drawString(heartRate, 120, 190);
+  b.drawString(heartRate, 60, 190);
 
-  b.setColor(COL.WHITE);
-  b.drawString(cadence, 200, 190);
+  //b.setColor(COL.WHITE);
+  b.drawString(cadence, 190, 190);
 
   g.drawImage(bimg,0,30);
 }
@@ -315,5 +315,37 @@ draw();
 
 setInterval(draw, 500);
 
-setWatch(start, BTN1, { repeat: true });
-setWatch(stop, BTN3, { repeat: true });
+// Replays  
+var pressTimeout;
+var lastKeyPress = 0;
+function btnPressed() {
+Bangle.buzz();
+E.showMessage("You did a Replay\nSaving...\n","Pitch X");
+var time = getTime();
+var timeSince = time - lastKeyPress;
+lastKeyPress = time;
+if (timeSince < 10) return; // ignore if < 10 sec ago 
+if (pressTimeout) return; // ignore a second press within the 10 sec
+// wait 5 seconds
+pressTimeout = setTimeout(function() {
+pressTimeout = undefined;
+NRF.sendHIDReport([0,0,30,0,0,0,0,0], function() {
+setTimeout(function() {
+NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
+}, 100);
+});
+}, 5000);
+// wait 7 seconds for replay
+pressTimeout = setTimeout(function() {
+pressTimeout = undefined;
+NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
+setTimeout(function() {
+NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
+}, 100);
+});
+}, 7000);}
+// trigger btnPressed whenever the button is pressed
+setWatch(btnPressed, BTN1, {edge:"falling",repeat:true,debounce:50});
+
+setWatch(stop, BTN2, { repeat: true });
+setWatch(start, BTN3, { repeat: true });
