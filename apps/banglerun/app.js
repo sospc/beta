@@ -165,8 +165,7 @@ const step = new Step(10);
 let totDist = 0;
 let totTime = 0;
 let totSteps = 0;
-let totCalories = (totSteps / 0.06);
-
+let totCalories = 0;
 let speed = 0;
 let cadence = 0;
 let heartRate = 0;
@@ -225,6 +224,7 @@ function drawBackground() {
 function draw() {
   //const totSpeed = totTime ? 3.6 * totDist / totTime : 0;
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
+  const totCalories = totSteps / 0.06;
 
   b.clearRect(0, 0, 240, 20);
   b.clearRect(0, 40, 240, 70);
@@ -295,6 +295,7 @@ function stop() {
     totDist = 0;
     totTime = 0;
     totSteps = 0;
+    totCalories = 0;
   }
   running = false;
   drawBackground();
