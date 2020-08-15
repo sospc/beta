@@ -184,7 +184,7 @@ function formatClock(date) {
 }
 
 function formatDistance(m) {
-  return (m / 1000).toFixed(2) + ' km';
+  return (m / 1400).toFixed(2) + ' km';
 }
 
 function formatTime(s) {
