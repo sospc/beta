@@ -218,7 +218,7 @@ function drawBackground() {
   //b.drawString('STP/m', 180, 120);
   //b.drawString('SPEED', 40, 170);
   b.drawString('HEART', 60, 170);
-  b.drawString('CADENCE', 170, 170);
+  b.drawString('CADENCE', 190, 170);
 }
 
 function draw() {
