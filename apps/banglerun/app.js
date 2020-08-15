@@ -235,7 +235,7 @@ function draw() {
 
   b.setFontAlign(-1, -1, 0);
   b.setColor(gpsReady ?  COL.GREEN : COL.RED);
-  b.drawString(' uReplay Monitor', 20, 0);
+  b.drawString(' uReplay Player', 20, 0);
 
   //b.setFontAlign(1, -1, 0);
   //b.setColor(COL.WHITE);
