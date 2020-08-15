@@ -322,6 +322,8 @@ setInterval(draw, 500);
 var pressTimeout;
 var lastKeyPress = 0;
 function btnPressed() {
+if (NRF.getSecurityStatus().connected) {
+g.clear();
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","Pitch X");
 var time = getTime();
@@ -340,16 +342,18 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 5000);
 // wait 7 seconds for replay
 pressTimeout = setTimeout(function() {
-g.clear();
 pressTimeout = undefined;
+g.clear();
 NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
 setTimeout(function() {
-NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
+NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
 }, 100);
 });
 }, 7000);}
+else { E.showMessage("SmartButton \n Offline...\n","WARNING!");
+}}
 // trigger btnPressed whenever the button is pressed
-setWatch(btnPressed, BTN1, {edge:"falling",repeat:true,debounce:50});
+setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
 
 setWatch(stop, BTN2, { repeat: true });
 setWatch(start, BTN3, { repeat: true });
