@@ -127,7 +127,7 @@ Bangle.on('lcdPower',on=>{
   if (on) {
     g.drawImage(img, 0,OY,bgoptions);
     //secondInterval = setInterval(draw,1000);
-    //draw();
+    draw();
   }
 });
 /*
