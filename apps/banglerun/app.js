@@ -248,7 +248,7 @@ function draw() {
   b.drawString(formatTime(totTime), 120, 90);
   //b.drawString(formatSpeed(totSpeed), 180, 90);
   b.drawString(totCalories, 120, 140);
-  b.drawString(totCadence, 120, 140);
+  //b.drawString(totCadence, 0, 0);
 
   b.setFont('6x8', 2);
   //b.drawString(formatSpeed(speed), 40,190);
