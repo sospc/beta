@@ -116,9 +116,8 @@ if (isLong) load("banglerun.app.js");
 g.drawImage(img, 0,OY,bgoptions);
 // draw clock itself and do it every second
 draw();
-var secondInterval = setInterval(draw,1000);
+//var secondInterval = setInterval(draw,1000);
 // load widgets
-g.drawImage(img, 0,OY,bgoptions);
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 // Stop when LCD goes off
@@ -126,9 +125,9 @@ Bangle.on('lcdPower',on=>{
   if (secondInterval) clearInterval(secondInterval);
   secondInterval = undefined;
   if (on) {
-    g.drawImage(img, 0,OY,bgoptions);
+    /*g.drawImage(img, 0,OY,bgoptions);
     secondInterval = setInterval(draw,1000);
-    draw();
+    draw();*/ //Do nothing
   }
 });
 /*
