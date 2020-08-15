@@ -118,7 +118,7 @@ g.drawImage(img, 0,OY,bgoptions);
 draw();
 var secondInterval = setInterval(draw,1000);
 // load widgets
-g.clear()
+g.clear();
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 // Stop when LCD goes off
