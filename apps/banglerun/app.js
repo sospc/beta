@@ -165,6 +165,7 @@ const step = new Step(10);
 let totDist = 0;
 let totTime = 0;
 let totSteps = 0;
+let totCalories = (totSteps / 0.06);
 
 let speed = 0;
 let cadence = 0;
@@ -246,7 +247,7 @@ function draw() {
   b.drawString(formatDistance(totSteps), 120, 40);
   b.drawString(formatTime(totTime), 120, 90);
   //b.drawString(formatSpeed(totSpeed), 180, 90);
-  b.drawString(totSteps, 120, 140);
+  b.drawString(totCalories, 120, 140);
   b.drawString(totCadence, 120, 140);
 
   b.setFont('6x8', 2);
