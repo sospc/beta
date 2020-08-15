@@ -132,3 +132,5 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 7000);}
 else { E.showMessage("SmartButton \n Offline...\n","WARNING!");
 }}
+// trigger btnPressed whenever the button is pressed
+setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
