@@ -21,7 +21,7 @@ setWatch(() => {
 `;
 // check to see if our clock is wrong - if it is use GPS time
 if ((new Date()).getFullYear()<2000) {
-  E.showMessage("Searching for\nGPS time");
+  E.showMessage("uReplay Watch is\nLoading...");
   Bangle.on("GPS",function cb(g) {
     Bangle.setGPSPower(0);
     Bangle.removeListener("GPS",cb);
