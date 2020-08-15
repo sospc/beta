@@ -123,6 +123,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 5000);
 // wait 7 seconds for replay
 pressTimeout = setTimeout(function() {
+g.clear();
 pressTimeout = undefined;
 NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
 setTimeout(function() {
