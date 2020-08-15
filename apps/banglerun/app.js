@@ -243,7 +243,7 @@ function draw() {
 
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
-  b.drawString(formatDistance(totDist), 120, 40);
+  b.drawString(formatDistance(totSteps), 120, 40);
   b.drawString(formatTime(totTime), 120, 90);
   //b.drawString(formatSpeed(totSpeed), 180, 90);
   b.drawString(totSteps, 120, 140);
@@ -315,7 +315,7 @@ draw();
 
 setInterval(draw, 500);
 
-// Replays  
+// Replays
 var pressTimeout;
 var lastKeyPress = 0;
 function btnPressed() {
@@ -337,10 +337,11 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 5000);
 // wait 7 seconds for replay
 pressTimeout = setTimeout(function() {
+g.clear();
 pressTimeout = undefined;
 NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
 setTimeout(function() {
-NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
+NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 100);
 });
 }, 7000);}
