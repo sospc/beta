@@ -248,16 +248,16 @@ function draw() {
   b.drawString(formatTime(totTime), 120, 90);
   //b.drawString(formatSpeed(totSpeed), 180, 90);
   b.drawString(totCalories, 120, 140);
-  //b.drawString(totCadence, 0, 0);
 
   b.setFont('6x8', 2);
   //b.drawString(formatSpeed(speed), 40,190);
 
+  //b.setColor(COL.WHITE);
+  //b.drawString(cadence, 190, 190);
+  b.drawString(totCadence, 190, 190);
+
   b.setColor(hrmReady ? COL.GREEN : COL.RED);
   b.drawString(heartRate, 60, 190);
-
-  //b.setColor(COL.WHITE);
-  b.drawString(cadence, 190, 190);
 
   g.drawImage(bimg,0,30);
 }
@@ -296,6 +296,7 @@ function stop() {
     totTime = 0;
     totSteps = 0;
     totCalories = 0;
+    totCadence = 0;
   }
   running = false;
   drawBackground();
