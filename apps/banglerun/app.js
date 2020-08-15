@@ -224,7 +224,7 @@ function drawBackground() {
 function draw() {
   //const totSpeed = totTime ? 3.6 * totDist / totTime : 0;
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
-  const totCalories = totSteps / 0.06;
+  const totCalories = totSteps * 0.06;
 
   b.clearRect(0, 0, 240, 20);
   b.clearRect(0, 40, 240, 70);
