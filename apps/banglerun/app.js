@@ -236,7 +236,7 @@ function draw() {
 
   b.setFontAlign(-1, -1, 0);
   b.setColor(gpsReady ?  COL.GREEN : COL.RED);
-  b.drawString(' uReplay Player', 20, 0);
+  b.drawString(' uReplay Player', 20, -2);
 
   //b.setFontAlign(1, -1, 0);
   //b.setColor(COL.WHITE);
@@ -343,7 +343,6 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 // wait 7 seconds for replay
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
-g.clear();
 NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
 setTimeout(function() {
 NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
@@ -354,6 +353,5 @@ else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
-
 setWatch(stop, BTN2, { repeat: true });
 setWatch(start, BTN3, { repeat: true });
