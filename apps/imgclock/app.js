@@ -28,6 +28,7 @@ function createBgImg() {
 }
 if (!bgimg || !bgimg.length) createBgImg();
 
+/*
 function draw() {
   var t = new Date();
   var hours = t.getHours();
@@ -66,6 +67,7 @@ function draw() {
   // draw to screen
   g.drawImage(cgimg,IX,IY+OY);
 }
+*/
 
 // Replays
 var pressTimeout;
@@ -101,12 +103,10 @@ else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
-
 setWatch(function(e){
 var isLong = (e.time-e.lastTime)>2;
 if (isLong) Bangle.showLauncher();
-}, BTN2, {repeat: false, edge: 'falling'});
-  
+}, BTN2, {repeat: false, edge: 'falling'}); 
 setWatch(function(e){
 var isLong = (e.time-e.lastTime)<2;
 if (isLong) load("banglerun.app.js");
@@ -115,7 +115,7 @@ if (isLong) load("banglerun.app.js");
 // draw background
 g.drawImage(img, 0,OY,bgoptions);
 // draw clock itself and do it every second
-draw();
+//draw();
 //var secondInterval = setInterval(draw,1000);
 // load widgets
 Bangle.loadWidgets();
@@ -126,8 +126,8 @@ Bangle.on('lcdPower',on=>{
   secondInterval = undefined;
   if (on) {
     g.drawImage(img, 0,OY,bgoptions);
-    //secondInterval = setInterval(draw,1000);
-    draw();
+    secondInterval = setInterval(draw,1000);
+    //draw();
   }
 });
 /*
