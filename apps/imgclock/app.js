@@ -68,7 +68,7 @@ function draw() {
   g.drawImage(cgimg,IX,IY+OY);
 }
 */
-
+E.showMessage("","Pitch X");
 // Replays
 var pressTimeout;
 var lastKeyPress = 0;
@@ -101,7 +101,6 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 });
 }, 7000);}
 else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
-setTimeout(()=>g.clear(), 3000);
 g.drawImage(img, 0,OY,bgoptions);
 }}
 // trigger btnPressed whenever the button is pressed
