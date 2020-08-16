@@ -77,7 +77,6 @@ if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","Pitch X");
 setTimeout(()=>g.clear(), 3000);
-g.drawImage(img, 0,OY,bgoptions);
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -86,6 +85,7 @@ if (pressTimeout) return; // ignore a second press within the 10 sec
 // wait 5 seconds
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
+g.drawImage(img, 0,OY,bgoptions);
 NRF.sendHIDReport([0,0,30,0,0,0,0,0], function() {
 setTimeout(function() {
 NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
