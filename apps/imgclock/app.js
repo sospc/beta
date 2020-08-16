@@ -77,6 +77,7 @@ if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","Pitch X");
 setTimeout(()=>g.clear(), 3000);
+g.drawImage(img, 0,OY,bgoptions);
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -102,6 +103,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 7000);}
 else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
 setTimeout(()=>g.clear(), 3000);
+g.drawImage(img, 0,OY,bgoptions);
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
@@ -128,7 +130,7 @@ Bangle.on('lcdPower',on=>{
   secondInterval = undefined;
   if (on) {
     g.drawImage(img, 0,OY,bgoptions);
-    secondInterval = setInterval(draw,1000);
+    //secondInterval = setInterval(draw,1000);
     //draw();
   }
 });
