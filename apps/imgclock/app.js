@@ -76,6 +76,7 @@ function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","Pitch X");
+setTimeout(()=>g.clear(), 3000);
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -100,6 +101,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 });
 }, 7000);}
 else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
+setTimeout(()=>g.clear(), 3000);
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
