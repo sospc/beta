@@ -76,7 +76,6 @@ function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","Pitch X");
-setTimeout(()=>g.clear(), 3000);
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -117,7 +116,7 @@ if (isLong) load("banglerun.app.js");
 }, BTN3, {repeat: true, edge: 'falling'});
 
 // draw background
-g.drawImage(img, 0,OY,bgoptions);
+//g.drawImage(img, 0,OY,bgoptions);
 // draw clock itself and do it every second
 //draw();
 //var secondInterval = setInterval(draw,1000);
