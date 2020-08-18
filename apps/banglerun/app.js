@@ -325,14 +325,14 @@ var pressTimeout;
 var lastKeyPress = 0;
 function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
-Bangle.buzz();
-E.showMessage("You did a Replay\nSaving...\n","");
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
 if (timeSince < 10) return; // ignore if < 10 sec ago 
 if (pressTimeout) return; // ignore a second press within the 10 sec
 // wait 5 seconds
+Bangle.buzz();
+E.showMessage("You did a Replay\nSaving...\n","");
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
 NRF.sendHIDReport([0,0,30,0,0,0,0,0], function() {
