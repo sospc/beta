@@ -187,7 +187,7 @@ function formatDistance(m) {
 }
 
 function formatCalories(c) {
-  return (c).toFixed(0) + ' cal';
+  return (c * 0.04).toFixed(0) + ' cal';
 }
 
 function formatTime(s) {
@@ -225,7 +225,7 @@ function drawBackground() {
 function draw() {
   //const totSpeed = totTime ? 3.6 * totDist / totTime : 0;
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
-  const totCalories = totSteps * 0.06;
+  const totCalories = totSteps;
 
   b.clearRect(0, 0, 240, 20);
   b.clearRect(0, 40, 240, 70);
