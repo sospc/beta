@@ -35,6 +35,7 @@ function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","INFO");
+setTimeout(()=>g.drawImage(img, 0,OY,bgoptions), 2000);
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -43,7 +44,6 @@ if (pressTimeout) return; // ignore a second press within the 10 sec
 // wait 5 seconds
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
-g.drawImage(img, 0,OY,bgoptions);
 NRF.sendHIDReport([0,0,30,0,0,0,0,0], function() {
 setTimeout(function() {
 NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
@@ -59,7 +59,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 100);
 });
 }, 7000);}
-else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
+else { E.showMessage("uReplay Watch \nis Offline...\nPress the Button\n to Check Again","WARNING!");
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
