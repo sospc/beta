@@ -60,7 +60,6 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 });
 }, 7000);}
 else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
-g.drawImage(img, 0,OY,bgoptions);
 }}
 // trigger btnPressed whenever the button is pressed
 setWatch(btnPressed, BTN, {edge:"falling",repeat:true,debounce:50});
