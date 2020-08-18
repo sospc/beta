@@ -85,6 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
+/*
 class Gps {
   constructor() {
     this._lastCall = Date.now();
@@ -143,7 +144,7 @@ class Gps {
     return { t: interval, d: distance };
   }
 }
-
+*/
 /** Process step counter data */
 class Step {
   constructor(size) {
@@ -159,7 +160,7 @@ class Step {
   }
 }
 
-const gps = new Gps();
+//const gps = new Gps();
 const step = new Step(10);
 
 let totDist = 0;
@@ -191,7 +192,7 @@ function formatCalories(c) {
   return (c).toFixed(0) + ' cal';
 }
 
-function formatTime(s) {
+/*function formatTime(s) {
   const hrs = Math.floor(s / 3600);
   const min = Math.floor(s / 60) % 60;
   const sec = Math.floor(s % 60);
@@ -206,7 +207,7 @@ function formatSpeed(kmh) {
   const min = Math.floor(skm / 60);
   const sec = Math.floor(skm % 60);
   return ('0' + min).substr(-2) + `'` + ('0' + sec).substr(-2) + `"`;
-}
+}*/
 
 function drawBackground() {
   b.clear();
@@ -266,7 +267,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-function handleGps(coords) {
+/*function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -274,7 +275,7 @@ function handleGps(coords) {
     totDist += step.d;
     totTime += step.t;
   }
-}
+}*/
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
@@ -307,11 +308,11 @@ function stop() {
   draw();
 }
 
-Bangle.on('GPS', handleGps);
+//Bangle.on('GPS', handleGps);
 Bangle.on('HRM', handleHrm);
 Bangle.on('step', handleStep);
 
-Bangle.setGPSPower(1);
+//Bangle.setGPSPower(1);
 Bangle.setHRMPower(1);
 
 g.clear();
