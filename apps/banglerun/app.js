@@ -209,7 +209,6 @@ function formatSpeed(kmh) {
 
 function drawBackground() {
   b.clear();
-  
   b.setColor(COL.WHITE);
   b.setFontAlign(0, -1, 0);
   b.setFont('6x8', 2);
@@ -325,6 +324,8 @@ var pressTimeout;
 var lastKeyPress = 0;
 function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
+Bangle.buzz();
+E.showMessage("You did a Replay\nSaving...\n","ttt");
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
@@ -333,8 +334,6 @@ if (pressTimeout) return; // ignore a second press within the 10 sec
 // wait 5 seconds
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
-Bangle.buzz();
-E.showMessage("You did a Replay\nSaving...\n","");
 NRF.sendHIDReport([0,0,30,0,0,0,0,0], function() {
 setTimeout(function() {
 NRF.sendHIDReport([0,0,0,0,0,0,0,0]); 
