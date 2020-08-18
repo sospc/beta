@@ -325,7 +325,7 @@ var lastKeyPress = 0;
 function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
 Bangle.buzz();
-E.showMessage("You did a Replay\nSaving...\n","ttt");
+E.showMessage("You did a Replay\nSaving...\n","_");
 var time = getTime();
 var timeSince = time - lastKeyPress;
 lastKeyPress = time;
