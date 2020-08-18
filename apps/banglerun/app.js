@@ -325,7 +325,6 @@ var pressTimeout;
 var lastKeyPress = 0;
 function btnPressed() {
 if (NRF.getSecurityStatus().connected) {
-g.clear();
 Bangle.buzz();
 E.showMessage("You did a Replay\nSaving...\n","");
 setTimeout(()=>g.clear(), 1000);
