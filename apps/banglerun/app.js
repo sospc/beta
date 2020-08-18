@@ -85,7 +85,6 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-/*
 class Gps {
   constructor() {
     this._lastCall = Date.now();
@@ -144,7 +143,6 @@ class Gps {
     return { t: interval, d: distance };
   }
 }
-*/
 /** Process step counter data */
 class Step {
   constructor(size) {
@@ -192,7 +190,7 @@ function formatCalories(c) {
   return (c).toFixed(0) + ' cal';
 }
 
-/*function formatTime(s) {
+function formatTime(s) {
   const hrs = Math.floor(s / 3600);
   const min = Math.floor(s / 60) % 60;
   const sec = Math.floor(s % 60);
@@ -207,15 +205,14 @@ function formatSpeed(kmh) {
   const min = Math.floor(skm / 60);
   const sec = Math.floor(skm % 60);
   return ('0' + min).substr(-2) + `'` + ('0' + sec).substr(-2) + `"`;
-}*/
+}
 
 function drawBackground() {
   b.clear();
-
+  
   b.setColor(COL.WHITE);
   b.setFontAlign(0, -1, 0);
   b.setFont('6x8', 2);
-
   b.drawString('DISTANCE', 120, 20);
   b.drawString('TIME', 120, 70);
   //b.drawString('PACE', 180, 70);
@@ -240,7 +237,7 @@ function draw() {
   b.setFont('6x8', 2);
 
   b.setFontAlign(-1, -1, 0);
-  //b.setColor(gpsReady ?  COL.GREEN : COL.RED);
+  b.setColor(gpsReady ?  COL.GREEN : COL.RED);
   b.drawString(' uReplay Player', 20, -2);
 
   //b.setFontAlign(1, -1, 0);
@@ -267,7 +264,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-/*function handleGps(coords) {
+function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -275,7 +272,7 @@ function draw() {
     totDist += step.d;
     totTime += step.t;
   }
-}*/
+}
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
