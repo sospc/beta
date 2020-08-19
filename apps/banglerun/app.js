@@ -263,7 +263,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-/*function handleGps(coords) {
+function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -271,7 +271,7 @@ function draw() {
     totDist += step.d;
     totTime += step.t;
   }
-}*/
+}
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
