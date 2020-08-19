@@ -178,9 +178,9 @@ let bpal = new Uint16Array([0,0xF800,0x07E0,0xFFFF]);
 let COL = { RED:1,GREEN:2,WHITE:3 };
 let bimg = {width:240,height:210,bpp:2,buffer:b.buffer,palette:bpal};
 
-function formatClock(date) {
+/*function formatClock(date) {
   return ('0' + date.getHours()).substr(-2) + ':' + ('0' + date.getMinutes()).substr(-2);
-}
+}*/
 
 function formatDistance(m) {
   return (m / 1400).toFixed(2) + ' km';
@@ -197,7 +197,7 @@ function formatTime(s) {
   return (hrs ? hrs + ':' : '') + ('0' + min).substr(-2) + `:` + ('0' + sec).substr(-2);
 }
 
-function formatSpeed(kmh) {
+/*function formatSpeed(kmh) {
   if (kmh <= 0.6) {
     return `__'__"`;
   }
@@ -205,7 +205,7 @@ function formatSpeed(kmh) {
   const min = Math.floor(skm / 60);
   const sec = Math.floor(skm % 60);
   return ('0' + min).substr(-2) + `'` + ('0' + sec).substr(-2) + `"`;
-}
+}*/
 
 function drawBackground() {
   b.clear();
