@@ -85,7 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-class Gps {
+/*class Gps {
   constructor() {
     this._lastCall = Date.now();
     this._lastValid = 0;
@@ -158,7 +158,7 @@ class Step {
   }
 }
 
-const gps = new Gps();
+//const gps = new Gps();
 const step = new Step(10);
 
 let totDist = 0;
@@ -169,7 +169,7 @@ let speed = 0;
 let cadence = 0;
 let heartRate = 0;
 
-let gpsReady = false;
+//let gpsReady = false;
 let hrmReady = false;
 let running = false;
 
@@ -263,7 +263,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-function handleGps(coords) {
+/*function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -271,7 +271,7 @@ function handleGps(coords) {
     totDist += step.d;
     totTime += step.t;
   }
-}
+}*/
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
