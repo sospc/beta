@@ -85,7 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-class Gps {
+/*class Gps {
   constructor() {
     this._lastCall = Date.now();
     this._lastValid = 0;
@@ -263,7 +263,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-function handleGps(coords) {
+/*function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -271,7 +271,7 @@ function handleGps(coords) {
     totDist += step.d;
     totTime += step.t;
   }
-}
+}*/
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
@@ -304,11 +304,11 @@ function stop() {
   draw();
 }
 
-Bangle.on('GPS', handleGps);
+//Bangle.on('GPS', handleGps);
 Bangle.on('HRM', handleHrm);
 Bangle.on('step', handleStep);
 
-Bangle.setGPSPower(1);
+//Bangle.setGPSPower(1);
 Bangle.setHRMPower(1);
 
 g.clear();
