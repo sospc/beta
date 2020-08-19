@@ -339,7 +339,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 100);
 });
 }, 5000);
-// wait 7 seconds for replay 
+// wait 7 seconds for replay
 pressTimeout = setTimeout(function() {
 pressTimeout = undefined;
 NRF.sendHIDReport([0,0,31,0,0,0,0,0], function() {
