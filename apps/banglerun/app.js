@@ -85,7 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-class Gps {
+/*class Gps {
   constructor() {
     this._lastCall = Date.now();
     this._lastValid = 0;
@@ -160,6 +160,9 @@ class Step {
 
 const gps = new Gps();
 const step = new Step(10);
+const time = Date.now();
+const interval = (time - this._lastCall) / 1000;
+this._lastCall = time;
 
 let totDist = 0;
 let totTime = 0;
