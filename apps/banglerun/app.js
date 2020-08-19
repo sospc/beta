@@ -158,7 +158,7 @@ class Step {
   }
 }
 
-//const gps = new Gps();
+const gps = new Gps();
 const step = new Step(10);
 
 let totDist = 0;
@@ -169,7 +169,7 @@ let speed = 0;
 let cadence = 0;
 let heartRate = 0;
 
-//let gpsReady = false;
+let gpsReady = false;
 let hrmReady = false;
 let running = false;
 
