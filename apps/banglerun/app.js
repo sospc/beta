@@ -236,7 +236,7 @@ function draw() {
   b.setFont('6x8', 2);
 
   b.setFontAlign(-1, -1, 0);
-  b.setColor(gpsReady ?  COL.GREEN : COL.RED);
+  //b.setColor(gpsReady ?  COL.GREEN : COL.RED);
   b.drawString(' uReplay Player', 20, -2);
 
   //b.setFontAlign(1, -1, 0);
