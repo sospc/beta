@@ -210,11 +210,11 @@ function drawBackground() {
   b.clear();
   b.setColor(COL.WHITE);
   b.setFontAlign(0, -1, 0);
-  b.setFont('6x8', 2);
-  b.drawString('DISTANCE', 120, 20);
-  b.drawString('TIME', 120, 70);
+  b.setFont('6x8', 3);
+  b.drawString('DISTANCE', 120, 30);
+  b.drawString('TIME', 120, 90);
   //b.drawString('PACE', 180, 70);
-  b.drawString('CALORIES', 120, 120);
+  b.drawString('CALORIES', 120, 150);
   //b.drawString('STP/m', 180, 120);
   //b.drawString('SPEED', 40, 170);
   //b.drawString('HEART', 60, 170);
@@ -226,17 +226,16 @@ function draw() {
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
   const totCalories = totSteps;
 
-  b.clearRect(0, 0, 240, 20);
+  /*b.clearRect(0, 0, 240, 20);
   b.clearRect(0, 40, 240, 70);
   b.clearRect(0, 90, 240, 120);
   b.clearRect(0, 140, 240, 170);
-  b.clearRect(0, 190, 240, 210);
+  b.clearRect(0, 190, 240, 210);*/
 
-  b.setFont('6x8', 2);
-
-  b.setFontAlign(-1, -1, 0);
+  b.setFont("Vector",23);
+  b.setFontAlign(-1 , -1);
   b.setColor(COL.RED);
-  b.drawString(' uReplay Player', 20, -2);
+  b.drawString(' uReplay Player');
 
   //b.setFontAlign(1, -1, 0);
   //b.setColor(COL.WHITE);
@@ -244,12 +243,12 @@ function draw() {
 
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
-  b.drawString(formatDistance(totSteps), 120, 40);
-  b.drawString(formatTime(totTime), 120, 90);
-  //b.drawString(formatSpeed(totSpeed), 180, 90);
-  b.drawString(formatCalories(totCalories), 120, 140);
+  b.drawString(formatDistance(totSteps), 120, 55);
+  b.drawString(formatTime(totTime), 120, 117);
+  //b.drawString(formatSpeed(totSpeed), 180, 87);
+  b.drawString(formatCalories(totCalories), 120, 175);
 
-  b.setFont('6x8', 2);
+  //b.setFont('6x8', 2);
   //b.drawString(formatSpeed(speed), 40,190);
 
   //b.setColor(COL.WHITE);
