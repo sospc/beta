@@ -196,7 +196,7 @@ function formatTime(s) {
   return (hrs ? hrs + ':' : '') + ('0' + min).substr(-2) + `:` + ('0' + sec).substr(-2);
 }
 
-function formatSpeed(kmh) {
+/*function formatSpeed(kmh) {
   if (kmh <= 0.6) {
     return `__'__"`;
   }
@@ -204,7 +204,7 @@ function formatSpeed(kmh) {
   const min = Math.floor(skm / 60);
   const sec = Math.floor(skm % 60);
   return ('0' + min).substr(-2) + `'` + ('0' + sec).substr(-2) + `"`;
-}
+}*/
 
 function drawBackground() {
   b.clear();
