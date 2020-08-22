@@ -226,11 +226,11 @@ function draw() {
   const totCadence = totTime ? Math.round(60 * totSteps / totTime) : 0;
   const totCalories = totSteps;
 
-  /*b.clearRect(0, 0, 240, 20);
-  b.clearRect(0, 40, 240, 70);
-  b.clearRect(0, 90, 240, 120);
-  b.clearRect(0, 140, 240, 170);
-  b.clearRect(0, 190, 240, 210);*/
+  //b.clearRect(0, 0, 240, 20);
+  //b.clearRect(0, 40, 240, 70);
+  b.clearRect(0, 30, 240, 30);
+  b.clearRect(0, 90, 240, 90);
+  b.clearRect(0, 120, 240, 150);
 
   b.setFont("Vector",23);
   b.setFontAlign(-1 , -1);
