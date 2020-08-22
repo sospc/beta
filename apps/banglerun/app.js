@@ -173,7 +173,7 @@ let hrmReady = false;
 let running = false;
 
 let b = Graphics.createArrayBuffer(240,210,2,{msb:true});
-let bpal = new Uint16Array([0,0xF800,0x3B5998,0xFFFF]);
+let bpal = new Uint16Array([0,0xF800,0x3B59,0xFFFF]);
 let COL = { RED:1,BLUE:2,WHITE:3 };
 let bimg = {width:240,height:210,bpp:2,buffer:b.buffer,palette:bpal};
 
@@ -208,7 +208,7 @@ function formatTime(s) {
 
 function drawBackground() {
   b.clear();
-  b.setColor(COL.WHITE);
+  b.setColor(COL.BLUE);
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
   b.drawString('DISTANCE', 120, 30);
@@ -238,8 +238,6 @@ function draw() {
   b.drawString(' uReplay Player');
 
   //b.setFontAlign(1, -1, 0);
-  //Color.myNewBlue = new Color(59,89,152);
-  b.setColor(COL.BLUE);
   //b.drawString(formatClock(new Date()), 234, 0);
 
   b.setFontAlign(0, -1, 0);
