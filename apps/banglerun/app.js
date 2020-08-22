@@ -217,8 +217,8 @@ function drawBackground() {
   b.drawString('CALORIES', 120, 120);
   //b.drawString('STP/m', 180, 120);
   //b.drawString('SPEED', 40, 170);
-  b.drawString('HEART', 60, 170);
-  b.drawString('CADENCE', 190, 170);
+  //b.drawString('HEART', 60, 170);
+  //b.drawString('CADENCE', 190, 170);
 }
 
 function draw() {
@@ -254,10 +254,10 @@ function draw() {
 
   //b.setColor(COL.WHITE);
   //b.drawString(cadence, 190, 190);
-  b.drawString(totCadence, 190, 190);
+  //b.drawString(totCadence, 190, 190);
 
-  b.setColor(hrmReady ? COL.GREEN : COL.RED);
-  b.drawString(heartRate, 60, 190);
+  //b.setColor(hrmReady ? COL.GREEN : COL.RED);
+  //b.drawString(heartRate, 60, 190);
   g.drawImage(bimg,0,30);
 }
 
