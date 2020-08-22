@@ -306,7 +306,7 @@ Bangle.on('GPS', handleGps);
 Bangle.on('HRM', handleHrm);
 Bangle.on('step', handleStep);
 
-Bangle.setGPSPower(1);
+Bangle.setGPSPower(0);
 Bangle.setHRMPower(0);
 
 g.clear();
