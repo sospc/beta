@@ -210,7 +210,7 @@ function drawBackground() {
   b.clear();
   b.setColor(COL.WHITE);
   b.setFontAlign(0, -1, 0);
-  b.setFontVector(17);
+  b.setFontVector(20);
   b.drawString('DISTANCE', 120, 30);
   b.drawString('TIME', 120, 90);
   //b.drawString('PACE', 180, 70);
@@ -232,13 +232,13 @@ function draw() {
   b.clearRect(0, 175, 240, 195);
   //b.clearRect(0, 175, 240, 120);
 
-  b.setFontVector(25);
+  b.setFontVector(27);
   b.setFontAlign(-1,-1);
-  b.setColor(COL.RED);
+  b.setColor(COL.WHITE);
   b.drawString(' uReplay Player');
 
   //b.setFontAlign(1, -1, 0);
-  //b.setColor(COL.WHITE);
+  b.setColor(COL.RED);
   //b.drawString(formatClock(new Date()), 234, 0);
 
   b.setFontAlign(0, -1, 0);
