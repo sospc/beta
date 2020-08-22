@@ -315,7 +315,7 @@ Bangle.drawWidgets();
 drawBackground();
 draw();
 
-setInterval(draw, 500);
+setInterval(draw, 1000);
 
 // Replays
 var pressTimeout;
