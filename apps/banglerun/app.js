@@ -232,7 +232,7 @@ function draw() {
   b.clearRect(0, 175, 240, 195);
   //b.clearRect(0, 175, 240, 120);
 
-  b.setFont("Vector",24);
+  b.setFont("Vector",25);
   b.setFontAlign(-1 , -1);
   b.setColor(COL.RED);
   b.drawString(' uReplay Player');
