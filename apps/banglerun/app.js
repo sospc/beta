@@ -227,12 +227,12 @@ function draw() {
   const totCalories = totSteps;
 
   //b.clearRect(0, 0, 240, 20);
-  //b.clearRect(0, 40, 240, 70);
-  b.clearRect(0, 30, 240, 30);
-  b.clearRect(0, 90, 240, 90);
-  b.clearRect(0, 120, 240, 150);
+  b.clearRect(0, 55, 240, 75);
+  b.clearRect(0, 117, 240, 137);
+  b.clearRect(0, 175, 240, 195);
+  //b.clearRect(0, 175, 240, 120);
 
-  b.setFont("Vector",23);
+  b.setFont("Vector",24);
   b.setFontAlign(-1 , -1);
   b.setColor(COL.RED);
   b.drawString(' uReplay Player');
