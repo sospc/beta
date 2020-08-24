@@ -211,8 +211,8 @@ function drawBackground() {
   b.setColor(COL.BLUE);
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
-  b.drawString('DISTANCE', 120, 30);
-  b.drawString('TIME', 120, 90);
+  b.drawString('GAME DURATION', 120, 30);
+  b.drawString('DISTANCE', 120, 90);
   //b.drawString('PACE', 180, 70);
   b.drawString('CALORIES', 120, 150);
   //b.drawString('STP/m', 180, 120);
@@ -235,15 +235,15 @@ function draw() {
   b.setFontVector(27);
   b.setFontAlign(-1,-1);
   b.setColor(COL.WHITE);
-  b.drawString(' uReplay Player');
+  b.drawString(' uReplay Stats');
 
-  //b.setFontAlign(1, -1, 0);
+  //b.setFontAlign(1,-1, 0);
   //b.drawString(formatClock(new Date()), 234, 0);
 
   b.setFontAlign(0, -1, 0);
   b.setFontVector(20);
-  b.drawString(formatDistance(totSteps), 120, 55);
-  b.drawString(formatTime(totTime), 120, 117);
+  b.drawString(formatDistance(totSteps), 120, 117);
+  b.drawString(formatTime(totTime), 120, 55);
   //b.drawString(formatSpeed(totSpeed), 180, 87);
   b.drawString(formatCalories(totCalories), 120, 175);
 
