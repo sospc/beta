@@ -161,14 +161,14 @@ class Step {
 const gps = new Gps();
 const step = new Step(10);
 
-//let totDist = 0;
+let totDist = 0;
 let totTime = 0;
 let totSteps = 0;
 let totCalories = 0;
-//let speed = 0;
+let speed = 0;
 let cadence = 0;
 let heartRate = 0;
-//let gpsReady = false;
+let gpsReady = false;
 let hrmReady = false;
 let running = false;
 let b = Graphics.createArrayBuffer(240,210,2,{msb:true});
@@ -258,7 +258,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-/*function handleGps(coords) {
+function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -266,7 +266,7 @@ function draw() {
     totDist += step.d;
     totTime += step.t;
   }
-}*/
+}
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
