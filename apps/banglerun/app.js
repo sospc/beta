@@ -176,9 +176,9 @@ let bpal = new Uint16Array([0,0xF800,0x3B59,0xFFFF]);
 let COL = { RED:1,BLUE:2,WHITE:3 };
 let bimg = {width:240,height:210,bpp:2,buffer:b.buffer,palette:bpal};
 
-/*function formatClock(date) {
+function formatClock(date) {
   return ('0' + date.getHours()).substr(-2) + ':' + ('0' + date.getMinutes()).substr(-2);
-}*/
+}
 
 function formatDistance(m) {
   return (m / 1400).toFixed(2) + ' km';
@@ -299,11 +299,11 @@ function stop() {
   draw();
 }
 
-//Bangle.on('GPS', handleGps);
+Bangle.on('GPS', handleGps);
 Bangle.on('HRM', handleHrm);
 Bangle.on('step', handleStep);
 
-//Bangle.setGPSPower(1);
+Bangle.setGPSPower(1);
 Bangle.setHRMPower(0);
 
 g.clear();
