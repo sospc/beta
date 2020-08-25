@@ -161,14 +161,14 @@ class Step {
 const gps = new Gps();
 const step = new Step(10);
 
-let totDist = 0;
+//let totDist = 0;
 let totTime = 0;
 let totSteps = 0;
 let totCalories = 0;
-let speed = 0;
+//let speed = 0;
 let cadence = 0;
 let heartRate = 0;
-let gpsReady = false;
+//let gpsReady = false;
 let hrmReady = false;
 let running = false;
 let b = Graphics.createArrayBuffer(240,210,2,{msb:true});
