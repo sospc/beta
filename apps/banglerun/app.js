@@ -171,7 +171,6 @@ let heartRate = 0;
 let gpsReady = false;
 let hrmReady = false;
 let running = false;
-
 let b = Graphics.createArrayBuffer(240,210,2,{msb:true});
 let bpal = new Uint16Array([0,0xF800,0x3B59,0xFFFF]);
 let COL = { RED:1,BLUE:2,WHITE:3 };
