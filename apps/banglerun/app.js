@@ -176,9 +176,9 @@ let bpal = new Uint16Array([0,0xF800,0x3B59,0xFFFF]);
 let COL = { RED:1,BLUE:2,WHITE:3 };
 let bimg = {width:240,height:210,bpp:2,buffer:b.buffer,palette:bpal};
 
-function formatClock(date) {
+/*function formatClock(date) {
   return ('0' + date.getHours()).substr(-2) + ':' + ('0' + date.getMinutes()).substr(-2);
-}
+}*/
 
 function formatDistance(m) {
   return (m / 1400).toFixed(2) + ' km';
@@ -258,7 +258,7 @@ function draw() {
   g.drawImage(bimg,0,30);
 }
 
-function handleGps(coords) {
+/*function handleGps(coords) {
   const step = gps.getDistance(coords);
   gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
@@ -266,7 +266,7 @@ function handleGps(coords) {
     totDist += step.d;
     totTime += step.t;
   }
-}
+}*/
 
 function handleHrm(hrm) {
   hrmReady = hrm.confidence > 50;
