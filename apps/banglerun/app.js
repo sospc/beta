@@ -98,7 +98,7 @@ class Gps {
     return this._filter.isReady();
   }
 
-  getDistance() {
+  getDistance(gps) {
     const time = Date.now();
     const interval = (time - this._lastCall) / 1000;
     this._lastCall = time;
@@ -232,7 +232,7 @@ function draw() {
   b.clearRect(0, 175, 240, 195);
   //b.clearRect(0, 175, 240, 120);
 
-  b.setFontVector(24);
+  b.setFontVector(22);
   b.setFontAlign(-1,-1);
   b.setColor(COL.WHITE);
   b.drawString(' uReplay Stats');
