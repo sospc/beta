@@ -82,8 +82,8 @@ Bangle.loadWidgets();
 Bangle.drawWidgets();
 // Stop when LCD goes off
 Bangle.on('lcdPower',on=>{
-  if (secondInterval) clearInterval(secondInterval);
-  secondInterval = undefined;
+  //if (secondInterval) clearInterval(secondInterval);
+  //secondInterval = undefined;
   if (on) {
     g.drawImage(img, 0,OY,bgoptions);
     //secondInterval = setInterval(draw,1000);
