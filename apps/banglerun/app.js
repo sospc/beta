@@ -159,7 +159,7 @@ class Step {
   }
 }
 
-//const gps = new Gps();
+const gps = new Gps();
 const step = new Step(10);
 
 let totDist = 0;
@@ -210,7 +210,7 @@ function drawBackground() {
   b.clear();
   b.setColor(COL.BLUE);
   b.setFontAlign(0, -1, 0);
-  b.setFontVector(20);
+  b.setFontVector(18);
   b.drawString('GAME DURATION', 120, 30);
   b.drawString('DISTANCE', 120, 90);
   //b.drawString('PACE', 180, 70);
@@ -232,7 +232,7 @@ function draw() {
   b.clearRect(0, 175, 240, 195);
   //b.clearRect(0, 175, 240, 120);
 
-  b.setFontVector(27);
+  b.setFontVector(24);
   b.setFontAlign(-1,-1);
   b.setColor(COL.WHITE);
   b.drawString(' uReplay Stats');
