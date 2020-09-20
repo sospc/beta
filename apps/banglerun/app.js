@@ -85,7 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-/*class Gps {
+class Gps {
   constructor() {
     this._lastCall = Date.now();
     this._lastValid = 0;
@@ -144,16 +144,6 @@ class IqrFilter {
   }
 }
 /** Process step counter data */
-const time = Date.now();
-    const interval = (time - this._lastCall) / 1000;
-    this._lastCall = time;
-
-const distance = length - remainder;
-    this._coords = coords;
-    this._lastValid = time;
-    if (distance > 0) {
-      this._shift = Vector.multiplyScalar(this._shift, remainder / length);
-    }
 
 class Step {
   constructor(size) {
@@ -271,7 +261,7 @@ function draw() {
 
 function handleGps(coords) {
   const step = gps.getDistance(coords);
-  //gpsReady = coords.fix > 0 && gps.isReady();
+  gpsReady = coords.fix > 0 && gps.isReady();
   speed = isFinite(gps.speed) ? gps.speed : 0;
   if (running) {
     totDist += step.d;
@@ -280,7 +270,7 @@ function handleGps(coords) {
 }
 
 function handleHrm(hrm) {
-  hrmReady = hrm.confidence > 50;
+  hrmReady = hrm.confidence > 50 && < 200;
   heartRate = hrm.bpm;
 }
 
