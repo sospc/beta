@@ -85,7 +85,7 @@ class IqrFilter {
 }
 
 /** Process GPS data */
-class Gps {
+/*class Gps {
   constructor() {
     this._lastCall = Date.now();
     this._lastValid = 0;
