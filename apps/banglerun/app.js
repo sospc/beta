@@ -210,7 +210,7 @@ function drawBackground() {
   b.clear();
   b.setColor(COL.BLUE);
   b.setFontAlign(0, -1, 0);
-  b.setFontVector(18);
+  b.setFontVector(17);
   b.drawString('GAME DURATION', 120, 30);
   b.drawString('DISTANCE', 120, 90);
   //b.drawString('PACE', 180, 70);
@@ -235,7 +235,7 @@ function draw() {
   b.setFontVector(22);
   b.setFontAlign(-1,-1);
   b.setColor(COL.WHITE);
-  b.drawString(' uReplay Stats');
+  b.drawString('  uReplay Stats');
 
   //b.setFontAlign(1,-1, 0);
   //b.drawString(formatClock(new Date()), 234, 0);
@@ -270,7 +270,7 @@ function handleGps(coords) {
 }
 
 function handleHrm(hrm) {
-  hrmReady = hrm.confidence > 50 && < 200;
+  hrmReady = hrm.confidence > 200;
   heartRate = hrm.bpm;
 }
 
