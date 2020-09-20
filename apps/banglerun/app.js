@@ -98,7 +98,7 @@ class Gps {
     return this._filter.isReady();
   }
 
-  getDistance(gps) {
+  getDistance() {
     const time = Date.now();
     const interval = (time - this._lastCall) / 1000;
     this._lastCall = time;
