@@ -195,12 +195,12 @@
     ]
   },
   { "id": "imgclock",
-    "name": "Image background clock",
-    "shortName":"Image Clock",
+    "name": "Home",
+    "shortName":"Home",
     "icon": "app.png",
     "version":"0.07",
-    "description": "A clock with an image as a background",
-    "tags": "clock",
+    "description": "Sports Venue Logo",
+    "tags": "logo",
     "type" : "clock",
     "custom": "custom.html",
     "storage": [
@@ -1462,12 +1462,12 @@
   },
   {
     "id": "banglerun",
-    "name": "BangleRun",
-    "shortName": "BangleRun",
+    "name": "uReplay Stats",
+    "shortName": "uReplay Stats",
     "icon": "banglerun.png",
     "version": "0.04",
-    "description": "An app for running sessions.",
-    "tags": "run,running,fitness,outdoors",
+    "description": "An app for Indoor Players.",
+    "tags": "ureplay,stats,players",
     "allow_emulator": false,
     "storage": [
       {
