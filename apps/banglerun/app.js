@@ -345,7 +345,7 @@ NRF.sendHIDReport([0,0,0,0,0,0,0,0]);
 }, 100);
 });
 }, 7000);}
-else { E.showMessage("uReplay Watch \nis Offline...\n","WARNING!");
+else { E.showMessage("uReplay Watch \nis Offline...\n"," ");
 //setTimeout(()=>g.clear(), 1000);
 }}
 // trigger btnPressed whenever the button is pressed
